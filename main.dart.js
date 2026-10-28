@@ -8474,7 +8474,7 @@ var $async$ab5=A.n(function(a,b){if(a===1){p.push(b)
 s=q}for(;;)switch(s){case 0:if($.a9==null)A.a_E()
 $.a9.toString
 s=2
-return A.h(A.aCZ("sb_publishable_wUfv7aM3JrutX-c5BuK8wlQ_ZZRS4BfO","https://udbzmuclrhjmnzbkmwky.supabase.co"),$async$ab5)
+return A.h(A.aCZ("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVkYnptdWNscmhqbW56Ymttd2t5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMxMDI4NTIsImV4cCI6MjEwODY3ODg1Mn0.tK1_pqd5QtLBr06u81JJbIkWduNrR5ibB1dO8QwuhHs","https://udbzmuclrhjmnzbkmwky.supabase.co"),$async$ab5)
 case 2:o=A.blx()
 q=4
 s=7
