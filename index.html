@@ -41,6 +41,25 @@
     For more details:
     * https://docs.flutter.dev/platform-integration/web/initialization
   -->
+    <div id="boot" style="position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+       background:#0C3324;color:#F6EDD9;font:16px -apple-system,system-ui,sans-serif;text-align:center;padding:24px">
+    <div style="font-size:26px;margin-bottom:8px">Fairway &amp; Clubs</div>
+    <div id="boot-msg">Loading…</div>
+  </div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function (rs) { rs.forEach(function (r) { r.unregister(); }); });
+    }
+    if (window.caches) { caches.keys().then(function (ks) { ks.forEach(function (k) { caches.delete(k); }); }); }
+    function bootFail(m) {
+      var e = document.getElementById('boot-msg');
+      if (e) e.innerHTML = 'The app could not start on this browser.<br><br><small>' + String(m).slice(0, 300) + '</small>';
+    }
+    window.addEventListener('error', function (e) { bootFail(e.message || e); });
+    window.addEventListener('unhandledrejection', function (e) { bootFail((e.reason && (e.reason.message || e.reason)) || 'unknown'); });
+    window.addEventListener('flutter-first-frame', function () { var e = document.getElementById('boot'); if (e) e.remove(); });
+    setTimeout(function () { if (document.getElementById('boot')) bootFail('Still loading after 40 seconds. Check the internet connection and reload.'); }, 40000);
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
